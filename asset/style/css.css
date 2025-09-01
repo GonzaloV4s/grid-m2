@@ -7,37 +7,44 @@
 .grid-container {
     display: grid;
     grid-template-areas:
-        "header header"
-        "nav main"
-        "footer footer"
-    ;
-
-    grid-template-columns: 10em 1fr;
-    grid-template-rows: 4em 1fr 4em;
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 8em auto 1fr 4em;
+    height: 100vh;
 }
 
 header {
     grid-area: header;
-    line-height: 4rem;
     background-color: #37659a;
     color: white;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
+.form-format {
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 nav {
     grid-area: nav;
     background-color: rgb(235, 235, 235);
-    min-height: calc(100vh - 10rem);
     padding: 0 1.5rem;
-}
 
+}
 
 
 nav ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     padding: 0px;
     line-height: 1.5rem;
 
@@ -46,26 +53,13 @@ nav ul {
 nav ul li {
     list-style: none;
     margin: 0px;
-     cursor: pointer;
+    cursor: pointer;
 }
 
 nav ul li {
-  position: relative;
-}
-nav ul li::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: #37659a;
-  transition: width 0.3s ease;
+    position: relative;
 }
 
-nav ul li:hover::after {
-  width: 100%;
-}
 
 .main {
     grid-area: main;
@@ -89,7 +83,7 @@ h2 {
     flex-direction: column;
     margin: 0;
     text-align: center;
-    border-radius: 8px; 
+    border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
 }
 
@@ -119,7 +113,7 @@ h2 {
 .card p {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #37659a; 
+    color: #37659a;
     margin: 0 0 0.75rem;
 }
 
@@ -130,10 +124,8 @@ h2 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1rem;
-
-
 }
 
 footer {
@@ -141,4 +133,75 @@ footer {
     background-color: white;
     text-align: center;
     line-height: 4rem;
+}
+
+.nav-up {
+    display: flex;
+    align-content: flex-start;
+}
+
+
+
+
+@media (max-width: 576px) {
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+}
+
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+        grid-template-columns: 12em 1fr;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar-expand-custom .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .grid-container {
+        grid-template-areas:
+            "nav header"
+            "nav main"
+            "footer main";
+        grid-template-columns: 15em 1fr;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+}
+
+
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-areas:
+            "nav header"
+            "nav main"
+            "footer main";
+        grid-template-columns: 15em 1fr;
+    }
+
 }

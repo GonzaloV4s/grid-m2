@@ -6,50 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Gonzalo</title>
     <link rel="stylesheet" href="./asset/style/css.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </head>
 
 
 <body>
 
     <div class="grid-container">
-        <header> 
-            <h1>Mi Ecommerce</h1>
+        <header>
+            <div>
+                <h1>Mi Ecommerce</h1>
+            </div>
+            <div>
+                <select class="form-select form-fomat" aria-label="Default select example">
+                    <option selected>Precio desde </option>
+                    <option value="1">5.000.000</option>
+                    <option value="2">10.000.000</option>
+                    <option value="3">15.000.000</option>
+                </select>
+            </div>
         </header>
-        <nav>
-            <h2>Categorías</h2>
-            <ul>
-                <li><strong>Perfumes</strong><span class="num-nav">(13)</span></li>
-                <li><strong>Ropa</strong><span class="num-nav">(21)</span></li>
-                <li><strong>Accesorios</strong><span class="num-nav">(41)</span></li>
-                <li><strong>otros</strong><span class="num-nav">(10)</span></li>
-            </ul>
+
+        <nav class="navbar navbar-expand-custom navbar-light bg-light nav-up">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Oferta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
 
         <main>
             <div class="grid">
 
+
+
                 <div class="card">
                     <img src="./asset/img/img1.jpg" alt="">
-                    <h5> perfume</h5>
-                    <p>$332323</p>
+                    <h5>Toyota Rav 4</h5>
+                    <p>$10.000.000</p>
                     <a href="#" class="boton">Comprar</a>
                 </div>
                 <div class="card">
                     <img src="./asset/img/img2.jpg" alt="">
-                    <h5> perfume</h5>
-                    <p>$332323</p>
+                    <h5>kia Seltos</h5>
+                    <p>$10.000.000</p>
                     <a href="#" class="boton">Comprar</a>
                 </div>
                 <div class="card">
                     <img src="./asset/img/img3.jpg" alt="">
-                    <h5> perfume</h5>
-                    <p>$332323</p>
+                    <h5>Toyota Cross</h5>
+                    <p>$10.000.000</p>
                     <a href="#" class="boton">Comprar</a>
                 </div>
                 <div class="card">
                     <img src="./asset/img/img4.jpg" alt="">
-                    <h5> perfume</h5>
-                    <p>$332323</p>
+                    <h5>Hyundai Tucson</h5>
+                    <p>$10.000.000</p>
+                    <a href="#" class="boton">Comprar</a>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/img5.jpg" alt="">
+                    <h5>Suzuki Swift</h5>
+                    <p>$10.000.000</p>
+                    <a href="#" class="boton">Comprar</a>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/img6.jpg" alt="">
+                    <h5>Hyundai i10</h5>
+                    <p>$10.000.000</p>
+                    <a href="#" class="boton">Comprar</a>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/img7.jpg" alt="">
+                    <h5>hyundai i20</h5>
+                    <p>$10.000.000</p>
+                    <a href="#" class="boton">Comprar</a>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/img8.jpg" alt="">
+                    <h5>Suzuki Baleno</h5>
+                    <p>$10.000.000</p>
                     <a href="#" class="boton">Comprar</a>
                 </div>
 
