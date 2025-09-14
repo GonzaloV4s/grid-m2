@@ -18,12 +18,15 @@
 
 header {
     grid-area: header;
-    background-color: #37659a;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 
@@ -50,14 +53,45 @@ nav ul {
 
 }
 
-nav ul li {
+.navbar-nav {
+    display: flex;
+    gap: 20px;
     list-style: none;
-    margin: 0px;
-    cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 
-nav ul li {
+.navbar-nav .nav-link {
     position: relative;
+    padding: 8px 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+    border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #6a11cb;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 
@@ -79,42 +113,77 @@ h2 {
 
 .card {
     display: flex;
-    background-color: white;
     flex-direction: column;
-    margin: 0;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
-}
-
-.card .boton {
-    background-color: #37659a;
-    color: white;
-    text-decoration: none;
-    padding: 0.6rem;
-    display: inline-block;
-    border-radius: 6px;
-    font-weight: 500;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .card img {
-    margin: 0.5rem;
-    max-width: 100%;
-    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.card h5 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-    margin: 0.5rem 0 0.25rem;
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.card h5,
+.card p,
+.card a {
+    margin: 10px;
 }
 
 .card p {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #37659a;
-    margin: 0 0 0.75rem;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
+.boton:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+}
+
+.card p:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .num-nav {
@@ -125,14 +194,17 @@ h2 {
 .grid {
     display: grid;
     grid-template-columns: 1fr;
+    padding: 1rem;
     gap: 1rem;
 }
 
 footer {
     grid-area: footer;
-    background-color: white;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
     text-align: center;
     line-height: 4rem;
+    padding: 3rem;
 }
 
 .nav-up {
@@ -140,6 +212,18 @@ footer {
     align-content: flex-start;
 }
 
+footer i {
+    color: white;
+    font-size: 22px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+footer i:hover {
+    color: #ac8aec;
+    transform: scale(1.2) rotate(8deg);
+}
 
 
 
@@ -150,6 +234,12 @@ footer {
         left: 0;
         width: 100%;
         z-index: 100;
+        padding: 0;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 1px;
     }
 }
 
@@ -183,7 +273,7 @@ footer {
         grid-template-areas:
             "nav header"
             "nav main"
-            "footer main";
+            "footer footer";
         grid-template-columns: 15em 1fr;
     }
 
@@ -200,7 +290,7 @@ footer {
         grid-template-areas:
             "nav header"
             "nav main"
-            "footer main";
+            "footer footer";
         grid-template-columns: 15em 1fr;
     }
 
